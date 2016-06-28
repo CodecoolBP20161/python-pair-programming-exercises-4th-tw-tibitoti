@@ -4,9 +4,12 @@ from person import Person
 
 
 def open_csv(file_name):
-    # implent this function
-    pass  # delete this
-
+    data_list
+    with open(file_name, "r") as f:
+        reader = csv.reader(f)
+        for row in reader:
+            data_list.append(Person(row[0], row[1]))
+    print (data_list)
 
 def get_csv_file_name(argv_list):
     # implent this function
@@ -34,6 +37,6 @@ def main():
     match_person = get_person_by_phone_number(person_list, user_input_phone_number)
 
     print(format_output(match_person))
-
+open_csv(file_name)
 if __name__ == '__main__':
     main()
